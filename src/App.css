@@ -15,6 +15,21 @@
 	font-weight: 400;
 }
 
+.blink-me {
+   animation: animate 2s linear infinite; 
+ }  
+  
+ @keyframes animate{ 
+   0%{ 
+     opacity: 0; 
+   } 
+   50%{ 
+     opacity: 0.7; 
+   } 
+   100%{ 
+     opacity: 0; 
+   } 
+ } 
 /************ Default Css ************/
 * {
   margin: 0;

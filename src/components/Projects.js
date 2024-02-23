@@ -7,6 +7,7 @@ import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 import { useState, useEffect } from "react";
+import { HashLink } from "react-router-hash-link";
 
 export const Projects = () => {
   const projects = [
@@ -25,7 +26,6 @@ export const Projects = () => {
       description: "@ Upwork",
       imgUrl: projImg3,
     },
-    
   ];
 
   const [loopNum, setLoopNum] = useState(0);
@@ -87,11 +87,12 @@ export const Projects = () => {
                 >
                   <h2>Projects</h2>
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
+                    With over 4 years of Professional Experience, you can find
+                    the organizations I've worked with in this section along
+                    with the projects I've completed and articles that I've
+                    published. Like something that you'd like to talk about
+                    more?
+                    <a href="#connect" className="blink-me" style={{textDecoration:"none"}}>{" "}Let’s Talk!</a>
                   </p>
                   <Tab.Container id="projects-tabs" defaultActiveKey="first">
                     <Nav
