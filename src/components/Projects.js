@@ -1,5 +1,6 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
+import navicon1 from "../assets/img/nav-icon1.svg"
 import projImg1 from "../assets/img/ko_digital_cover.png";
 import projImg2 from "../assets/img/BoredPanda.jpg";
 import projImg3 from "../assets/img/UpworkLarge.jpg";
@@ -28,12 +29,20 @@ export const Projects = () => {
     },
   ];
 
+  const articles =[
+    {
+      title:"Original Array Properties : Javascript 101",
+      platform:"LinkedIn",
+      imgUrl:navicon1,
+    }
+  ]
+
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(200 - Math.random() * 50);
   const [index, setIndex] = useState(1);
-  const toRotate = ["More projects coming soon...."];
+  const toRotate = ["More projects coming soon, How about some articles instead? ➟"];
   const period = 100;
 
   useEffect(() => {
@@ -107,7 +116,7 @@ export const Projects = () => {
                         <Nav.Link eventKey="second">Projects</Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
-                        <Nav.Link eventKey="third">More</Nav.Link>
+                        <Nav.Link eventKey="third">Articles</Nav.Link>
                       </Nav.Item>
                     </Nav>
                     <Tab.Content
@@ -136,16 +145,11 @@ export const Projects = () => {
                         </h1>
                       </Tab.Pane>
                       <Tab.Pane eventKey="third">
-                        <h1>
-                          {" "}
-                          <span
-                            className="txt-rotate"
-                            dataPeriod="600"
-                            data-rotate='[ "Hi! I am Ayush - Web Developer", "こんにちは！ウェブデザイナーのアユシュです。", " Hi! I am Ayush - UI/UX Designer" ]'
-                          >
-                            <span className="wrap">{text}</span>
-                          </span>
-                        </h1>
+                        <Row>
+                          {articles.map((article, index) => {
+                            return <ProjectCard key={index} {...article} />;
+                          })}
+                        </Row>
                       </Tab.Pane>
                     </Tab.Content>
                   </Tab.Container>
